@@ -1,30 +1,34 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
+import { StackActions, NavigationActions, withNavigation } from 'react-navigation'; // Version can be specified in package.json
 
 class LoginScreen extends React.Component {
-    render() {
-      return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>
-            Login Screen
-            Login Success
-          </Text>
+  static navigationOptions = {
+    title: '로그인',
+  };
 
-          <Button
-            title="Go to Main"
-            onPress={() => {
-              this.props.navigation.dispatch(StackActions.reset({
-                index: 0,
-                actions: [
-                  NavigationActions.navigate({ routeName: 'Home' })
-                ],
-              }))
-            }}
-          />
-        </View>
-      );
-    }  
-  }
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>
+          Login Screen
+          Login Success
+        </Text>
 
-export default LoginScreen;
+        <Button
+          title="Go to Main"
+          onPress={() => {
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Home' })
+              ],
+            }))
+          }}
+        />
+      </View>
+    );
+  }  
+}
+
+export default withNavigation(LoginScreen);

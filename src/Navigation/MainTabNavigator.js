@@ -2,7 +2,13 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { TabBarIcon } from '../Components';
-import { HomeScreen, LinksScreen, MapScreen, SettingsScreen } from '../Screens';
+import { 
+  HomeScreen, 
+  LinksScreen, 
+  MapScreen, 
+  SettingsScreen, 
+  MyInfoScreen 
+} from '../Screens';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -36,9 +42,14 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const MapStack = createStackNavigator({
-  Map: MapScreen,
-});
+const MapStack = createStackNavigator(
+  {
+    Map: MapScreen,
+  },
+  {
+    headerMode: 'none',
+  }
+);
 
 MapStack.navigationOptions = {
   tabBarLabel: 'Map',
@@ -51,8 +62,14 @@ MapStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
+    Settings: SettingsScreen,
+    MyInfo: MyInfoScreen,
+    MyInfoModal: MyInfoScreen,
+  },
+  {
+    mode: 'modal',
+  }
+);
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',

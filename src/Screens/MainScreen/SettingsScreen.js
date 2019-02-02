@@ -3,19 +3,21 @@ import { View, Text, Button } from 'react-native';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'app.json',
+    title: '설정',
   };
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
     return (
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>
-                세팅스 스크린 this will be modal 
-                or 
-                switch tab navigator
+                settings
             </Text>
+            <Button
+              title="내 정보 switch"
+              onPress={() => this.props.navigation.navigate('MyInfo')}/>
+            <Button
+              title="내 정보 modal"
+              onPress={() => this.props.navigation.navigate('MyInfoModal')}/>
         </View>
     );
   }
