@@ -4,7 +4,7 @@ import { StackActions, NavigationActions, withNavigation } from 'react-navigatio
 
 class LoginScreen extends React.Component {
   static navigationOptions = {
-    title: '로그인',
+    headerTitle: '로그인',
   };
 
   render() {
@@ -17,14 +17,16 @@ class LoginScreen extends React.Component {
 
         <Button
           title="Go to Main"
-          onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Home' })
-              ],
-            }))
-          }}
+          // onPress={() => {
+          //   this.props.navigation.dispatch(StackActions.reset({
+          //     index: 0,
+          //     actions: [
+          //       NavigationActions.navigate({ routeName: 'Main' })
+          //     ],
+          //   }))
+          // }}
+        
+          onPress={() => this.props.navigation.navigate('Main')}
         />
       </View>
     );
