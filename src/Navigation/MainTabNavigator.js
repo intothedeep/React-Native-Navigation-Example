@@ -61,13 +61,23 @@ MapStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
+const PreSettingStack = createStackNavigator({
     Settings: SettingsScreen,
-    MyInfo: MyInfoScreen,
     MyInfoModal: MyInfoScreen,
   },
   {
-    mode: 'modal',
+    mode: 'modal'
+  }
+);
+const MyInfoStack = createStackNavigator({
+  MyInfo: MyInfoScreen,
+});
+const SettingsStack = createStackNavigator({
+    Settings: PreSettingStack,
+    MyInfo: MyInfoStack,
+  },
+  {
+    headerMode: 'none',
   }
 );
 

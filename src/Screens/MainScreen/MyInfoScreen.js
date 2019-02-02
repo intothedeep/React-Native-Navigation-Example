@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-export default class MyInfoScreen extends React.Component {
+class MyInfoScreen extends React.Component {
   static navigationOptions = {
     title: '내 정보',
   };
@@ -15,7 +16,11 @@ export default class MyInfoScreen extends React.Component {
             <Button
                 onPress={() => this.props.navigation.goBack()}
                 title="Dismiss"
-            />            
+            />
+            <Button 
+                onPress={() => this.props.navigation.navigate('Settings')}
+                title="Dismiss between stacks"            
+            />
             <Button
                 onPress={() => this.props.navigation.navigate("Home")}
                 title="Go Home"
@@ -24,3 +29,5 @@ export default class MyInfoScreen extends React.Component {
     );
   }
 }
+
+export default withNavigation(MyInfoScreen);
