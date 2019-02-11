@@ -4,7 +4,7 @@ import { withNavigation } from 'react-navigation';
 
 class MyInfoScreen extends React.Component {
   static navigationOptions = {
-    title: '내 정보',
+    title: '내 정보'
   };
 
   render() {

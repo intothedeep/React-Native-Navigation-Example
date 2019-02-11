@@ -9,15 +9,15 @@ const LoginStack = createStackNavigator(
     },
 );
 
-const MainSwitchNavigator = createSwitchNavigator({
+const Appnavigator = createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
         Login: LoginStack,
         Main: MainTabNavigator,
-    }, 
+    },
     {
         initialRouteName: 'Login',
     }
 );
 
-export default createAppContainer(MainSwitchNavigator);
+export default createAppContainer(Appnavigator);

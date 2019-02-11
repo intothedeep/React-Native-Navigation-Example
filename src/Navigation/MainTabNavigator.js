@@ -66,7 +66,8 @@ const PreSettingStack = createStackNavigator({
     MyInfoModal: MyInfoScreen,
   },
   {
-    mode: 'modal'
+    mode: 'modal',
+    headerMode: 'float', // float 반짝, screen screen 올라옴
   }
 );
 const MyInfoStack = createStackNavigator({
@@ -74,10 +75,12 @@ const MyInfoStack = createStackNavigator({
 });
 const SettingsStack = createStackNavigator({
     Settings: PreSettingStack,
-    MyInfo: MyInfoStack,
+    MyInfo: MyInfoScreen,
   },
   {
     headerMode: 'none',
+    mode: 'card',
+
   }
 );
 
